@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service PredictionService {
+   rpc doPrediction(PredictRequest) returns (PredictResponse) {}
+}
+
+message PredictRequest {
+    repeated string s = 1;
+}
+
+message PredictResponse {
+    double probability = 1;
+}
