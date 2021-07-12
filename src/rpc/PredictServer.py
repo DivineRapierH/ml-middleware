@@ -10,6 +10,11 @@ from shared.common import ft
 
 
 def predict(strList: list[str]) -> float:
+    embedding = calcEmbedding(strList)
+    return predictCirProb(np.array([embedding], dtype='float64'))
+
+
+def calcEmbedding(strList: list[str]) -> np.ndarray:
     tagListList = extractTag(annotate(strList))
     tagNameSet = set()
     for tagList in tagListList:
@@ -18,7 +23,7 @@ def predict(strList: list[str]) -> float:
     embedding = np.average(np.array(list(map(lambda name: ft.get_word_vector(name),
                                              filter(lambda name: name is not None and len(name) > 1, tagNameSet)))
                                     ), axis=0)
-    return predictCirProb(np.array([embedding], dtype='float64'))
+    return embedding
 
 
 class PredictServicer(predict_pb2_grpc.PredictionServiceServicer):
