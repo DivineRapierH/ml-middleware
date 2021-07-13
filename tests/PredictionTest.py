@@ -1,7 +1,9 @@
 import unittest
 
+import grpc
 import numpy as np
 
+from rpc import predict_pb2_grpc, predict_pb2
 from rpc.PredictServer import calcEmbedding
 
 

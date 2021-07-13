@@ -2,14 +2,13 @@ import logging
 
 import grpc
 import tensorflow as tf
-import numpy as np
 from numpy import ndarray
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2_grpc
 
 from config import TF_RPC_SERVER
 
-log = logging.getLogger('waitress')
+log = logging.getLogger(__name__)
 
 
 def predictCirProb(data: ndarray) -> float:

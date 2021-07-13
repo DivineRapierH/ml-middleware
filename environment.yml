@@ -1,0 +1,7 @@
+name: ml-middleware
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+prefix: /Users/lifan/env/anaconda3/envs/ml-middleware

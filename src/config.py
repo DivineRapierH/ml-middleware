@@ -9,3 +9,6 @@ TF_RPC_SERVER: str = environ.get('MOD_TAGGING_TF_RPC_SERVER', default='localhost
 
 # Fetch project directory (defined in .Dockerfile)
 PROJECT_DIR: str = environ.get('PROJECT_DIR', default='/home/ml-middleware')
+
+# Models directory
+MODELS_DIR: str = environ.get('MODELS_DIR', default='/home/models')
