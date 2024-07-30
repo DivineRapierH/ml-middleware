@@ -1,5 +1,5 @@
 fasttext-wheel==0.9.2
 hanlp==2.1.0a53
 grpcio==1.53.2
-tensorflow==2.11.1
+tensorflow==2.12.1
 tensorflow-serving-api==2.5.1
